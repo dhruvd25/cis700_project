@@ -31,7 +31,7 @@ class celebrity(data.Dataset):
         img_name = self.landmarks_frame['path'][idx]
         image_path = join(self.image_folder,img_name).rstrip()
         image = Image.open(image_path).convert('RGB')
-        label = self.landmarks_frame['label'][idx]
+        label = self.landmarks_frame['labels'][0][idx]
         if self.transform:
             image = self.transform(image)
         return image,label
