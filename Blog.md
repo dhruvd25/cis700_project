@@ -71,7 +71,7 @@ Now that we have both our networks, we can start generating images of people at 
   <img src="GAN_Training/encoded_gan_out.png" width="500">
 </p>
 
-The first image is the input to the Encoder. The output of the Encoder is fed into the Generator, the outputs of which is depicted in the second image. Based on the second output, we can see that our Encoder was successful in learning a mapping between the cGAN outputs and the noise vectors. (CONTINUE)
+The first image is the input to the Encoder. The output of the Encoder is fed into the Generator, the outputs of which is depicted in the second image. Based on the second output, we can see that our Encoder was successful in learning a mapping between the cGAN outputs and the noise vectors. However, we can see that these outputs are more blurry as compared to the Generator outputs. This is when the loss of the Encoder becomes important. The 50-60% of the information that we lose is in the sharpness of the image, due to which these results are more blurry.
 
 ## Improvements
 * Based on the results of the cGAN, we can see that there seems to be very **little difference** between most people of ages between 20-30 and 40-50. Adding more age groups as well older age groups should help the Generator learn more discerning features between them.
