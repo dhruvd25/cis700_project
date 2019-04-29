@@ -82,6 +82,10 @@ In order to train the Encoder, we first run the trained Generator to generate sy
 ## Putting Everything Together
 Now that we have both our networks, we can start generating images of people at different ages! The first step is to choose a particular face image and run it through the encoder to get its represented noise vector. After that, we choose which age we want to see that person at and run both the obtained noise vector and age through the Generator. This gives us our desired output.
 
+<p align="center">
+  <img src="GAN_Training/OverallPipeline.png" height = "150" width="520">
+</p>
+
 ## Results
 
 <p align="center">
