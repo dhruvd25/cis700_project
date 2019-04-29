@@ -14,8 +14,27 @@ For training purposes, we decided to only use **two** age groups - 20-30 and 40-
 Sadly, as people age, they start to look different i.e same people at different ages have different features. 
 On the basis of this inductive bias, we train a cGAN by concatenating a one hot encoding vector to noise vector for the Generator and to the convolution layer in the Discriminator. Images of people with an age between 20-30 are given a label 0 and those with an age between 40-50 are given a label of 1. This vector adds information to the noise vector by telling the Generator to produce an image with certain features depending on the concatenated vector. 
 
+<p align="center">
+  <img src="GAN_Training/Generator700.png" width="500">
+</p>
+
+The above diagram shows the structure of our Generator. We use ConvTranspose2d layers with a filter size of 4 along with BatchNorm and ReLU activation functions. For the last layer, we remove the BatchNorm and use a Tanh activation function.
+
+<p align="center">
+  <img src="GAN_Training/Discrinator700.png" width="500">
+</p>
+
+The above diagram shows the structure of our Discriminator. We use Conv2D layers with a filter size of 4 along with Batch Norm and ReLU activation functions. For both the first and layer, BatchNorm is removed and a Sigmoid activation function is used in the layer. 
+
 ## Step 2: Encoder
 Clearly, there exists a mapping between the noise vectors and what the Generator outputs. However, the GAN does not learn this inverse mapping. In order for us to produce images of a person of a different age, we have to be able to generate the respective noise vector for that person. Once we have this vector, we can concatentate the age we want to see this person at and run it to through the generator. 
+
+<p align="center">
+  <img src="GAN_Training/Encoder700.png" width="500">
+</p>
+
+## Putting Everything Together
+Now that we have both our networks, we can start generating images of people at different ages! The first step is to choose a particular face image and run it through the encoder to get its represented noise vector. After that, we choose which age we want to see that person at and run both the obtained noise vector and age through the Generator. This gives us our desired output.
 
 ## Results
 
