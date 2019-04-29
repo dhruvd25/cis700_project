@@ -6,6 +6,7 @@ This repository contains the following files:
  * Files needed to run code
 
 Use of each file:
+* final_project_code.ipynb: Jupyter notebook file which can uploaded to Google Colaboratory
 * Wiki_Crop: Contains wikipedia part of the IMDB-Wiki Face Images Dataset
 * GAN_Training: Contains images and loss of the model while training it
 * celebloader.py: Helper function needed to load the dataset in pytorch
