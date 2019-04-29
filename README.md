@@ -2,6 +2,7 @@
 This repository contains the following files:
  * Files to be turned in as a part of the submission for CIS700 Final Project
  * Files needed to run code
+
 Use of each file:
 * Wiki_Crop: Contains wikipedia part of the IMDB-Wiki Face Images Dataset
 * GAN_Training: Contains images and loss of the model while training it
