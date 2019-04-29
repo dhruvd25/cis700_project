@@ -15,7 +15,7 @@ For training purposes, we decided to only use **two** age groups - 20-30 and 40-
 
 ## Step 1: cGAN
 
-Sadly, as people age, they start to look different i.e same people at different ages have different features. 
+Sadly as we know, as people age, they start to look different i.e same people at different ages have different features. 
 On the basis of this inductive bias, we train a cGAN by concatenating a **one hot encoding vector** to the noise vector for the Generator and to the convolution layer in the Discriminator. Images of people with an age between 20-30 are given a label 0 and those with an age between 40-50 are given a label of 1. This vector adds information to the noise vector by telling the Generator to produce an image with certain features depending on the concatenated vector. 
 
 <p align="center">
@@ -45,6 +45,27 @@ The above diagram shows the structure of our Discriminator. We use Conv2D layers
 </p>
 
 The above pictures show how the outputs of our GAN get better over time. 
+
+### Condition Outputs
+
+We would also like to check how well our GAN is learning the conditioning against age. In order to see that, we generate noise vectors and send the same noise vectors into the Generator with different age labels.
+
+<p align="center">
+  <img src="GAN_Training/gan_new.png" width="500">
+</p>
+
+This picture is the output for when the age label is 0.
+
+<p align="center">
+  <img src="GAN_Training/gan_old.png" width="500">
+</p>
+
+This picture is the output for when the age label is 1.
+
+Clearly, there isn't much difference between the two. The reason for this is two fold:
+* There isn't that drastic a change in the features between people of ages 20-30 and 40-50.
+* The outputs of the GAN are blurry due to which its hard to make out what the actual facial features are. 
+
 
 ## Step 2: Encoder
 Clearly, there exists a mapping between the noise vectors and the Generator outputs. However, the GAN does not learn this inverse mapping. In order for us to produce images of a person of a different age, we have to be able to generate the respective noise vector for that person. Once we have this vector, we can concatentate the age we want to see this person at and run it to through the generator. 
