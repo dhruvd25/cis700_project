@@ -46,7 +46,7 @@ The above diagram shows the structure of our Discriminator. We use Conv2D layers
 
 The above pictures show how the outputs of our GAN get better over time. 
 
-### Condition Outputs
+### Conditioned Outputs
 
 We would also like to check how well our GAN is learning the conditioning against age. In order to see that, we generate noise vectors and send the same noise vectors into the Generator with different age labels.
 
