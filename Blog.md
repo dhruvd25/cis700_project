@@ -54,13 +54,13 @@ We would also like to check how well our GAN is learning the conditioning agains
   <img src="GAN_Training/gan_new.png" width="500">
 </p>
 
-This picture is the output for when the age label is 0.
+The above picture is the output for when the age label is 0.
 
 <p align="center">
   <img src="GAN_Training/gan_old.png" width="500">
 </p>
 
-This picture is the output for when the age label is 1.
+The above picture is the output for when the age label is 1.
 
 Clearly, there isn't much difference between the two. The reason for this is two fold:
 * There isn't that drastic a change in the features between people of ages 20-30 and 40-50.
