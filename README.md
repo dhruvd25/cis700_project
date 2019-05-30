@@ -101,5 +101,3 @@ The first image is the input to the Encoder. The output of the Encoder is fed in
 ## Improvements
 * Based on the results of the cGAN, we can see that there seems to be very **little difference** between most people of ages between 20-30 and 40-50. Adding more age groups as well older age groups should help the Generator learn more discerning features between them.
 * We can see that we lose information in mapping the generator outputs to their respective noise vectors. Optimization techniques can be used to reduce this loss.
-
-
