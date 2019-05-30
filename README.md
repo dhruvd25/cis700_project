@@ -62,10 +62,11 @@ The above picture is the output for when the age label is 0.
 
 The above picture is the output for when the age label is 1.
 
-Clearly, there isn't much difference between the two. The reason for this is two fold:
-* There isn't that drastic a change in the features between people of ages 20-30 and 40-50.
-* The outputs of the GAN are blurry due to which its hard to make out what the actual facial features are. 
-
+For the first two images it's earier to spot the ageing but for the last two images, the aging is hardly visible. While trainig the cGAN it was observed that aging was easily distinguishable for males as compared to femals.
+This might be due to the following: 
+* There isn't that drastic a change in the features between people of ages 20-30 and 40-50
+* The output images of the GAN are of the size 64x64 due to which its hard to make out what the actual facial features
+This needs further investigation as there may be other reasons associated with this behaviour.
 
 ## Step 2: Encoder
 Clearly, there exists a mapping between the noise vectors and the Generator outputs. However, the GAN does not learn this inverse mapping. In order for us to produce images of a person of a different age, we have to be able to generate the respective noise vector for that person. Once we have this vector, we can concatentate the age we want to see this person at and run it to through the generator. 
